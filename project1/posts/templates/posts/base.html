@@ -1,0 +1,140 @@
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %} Vibes {% endblock %} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+
+        <!-- Load the path to your static file-->
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+
+        <!-- Ali is G-->
+
+
+<nav class="nav navbar-default">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/posts"style="font-size:20px" >Home</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse navHeaderCollapse">
+      <ul class="nav navbar-nav">
+        <li class="nav navbar-nav">
+            <a href="../music">
+                <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;Music
+            </a>
+            </li>
+
+            <li class="nav navbar-nav">
+                    <a href="../stock">
+                        <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>&nbsp;Stock
+                    </a>
+            </li>
+            <li class="">
+                    <a href="/ApiGeo">
+                        <span class="glyphicon glyphicon" aria-hidden="true"></span>&nbsp; ApiGeo
+                    </a>
+            </li>
+            <!-- Dropdown -->
+            <li class="dropdown">
+                <a class="glyphicon glyphicon-tasks" data-toggle="dropdown" href="#">
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+        <form class="navbar-form navbar-left" role="search" method="GET" action="#">
+            <div class="form-group">
+                <input type="text" class="form-control" name="q" value="">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+        </form>
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="">
+                    <a href="/accounts/login/">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Login
+                    </a>
+            </li>
+            <li class="" >
+                    <a href="/accounts/logout/" >
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+            </li>
+        </ul>
+
+
+
+
+
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
+
+
+
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+
+    </body>
+    <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">You've reached the end!</h5>
+
+                <p class="grey-text text-lighten-4">Contact: kundugu@gmail.net</p>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="/support-donate/">Support this Website!</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/consulting/">Hire me</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/pythonprogramming.net/">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://twitter.com/sentdex">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://plus.google.com/+sentdex">Google+</a></li>
+                </ul>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h6 class="white-text">Legal stuff:</h6>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="/about/tos/">Terms and Conditions</a></li>
+                  <li><a class="grey-text text-lighten-3" href="/about/privacy-policy/">Privacy Policy</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+                <p>© OVER 9000! PythonProgramming.net</p>
+
+            </div>
+          </div>
+    </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
+

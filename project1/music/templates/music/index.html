@@ -1,0 +1,40 @@
+{% extends 'music/layout.html'%}
+{% block body %}
+
+    <div>
+        {% for album in object_list %} 
+            <div style="font-size: 1em; display: inline-block">
+                {% load static %}
+                {% static "" as baseUrl %}
+                <!-- image -->
+                <img src="{{ baseUrl }}/{{ album.album_logo }}" style="width: 250"></img>
+
+                <!-- Details button -->
+                <a href="{% url 'music:details' album.id%}" style="display: inline">
+                    <h3 style="color: red">{{album.album_title}} : {{album.id}}$</h3>
+                </a>
+
+                <!-- update button -->
+                <form action="{% url 'music:album-update' album.id%}" style="display: inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                </form>
+
+                <!-- Delete button -->
+                <form action="{% url 'music:album-delete' album.id%}" method="POST" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="album_id" value="{{ album.id }}"/>
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </form>
+                &nbsp;
+            </div>
+            &nbsp;
+            
+        {% endfor %}
+        </div>
+
+{% endblock %}

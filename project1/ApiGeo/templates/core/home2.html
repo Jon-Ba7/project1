@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if d %}
+        {% for item in d %}
+            <p>
+                <strong>{{ item }}</strong> is the G
+            </p>
+        {% endfor %}
+    {% else %}
+        <p><em>Unknow value</em></p>
+    {% endif %}
+</body>
+</html>

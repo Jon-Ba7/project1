@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <form>
+        <h1>Registration page :</h1>
+        <form method="POST" action="{ url 'register' }">
+            {% csrf_token %}
+            {% if form.error %}
+            <p>There's error in the form</p>
+            {% endif %}
+
+            <!-- Render the form like tbis -->
+            {{ form }}
+            <input type="submit" value="Register">
+
+        </form>
+    </form>
+</body>
+</html>

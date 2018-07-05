@@ -1,0 +1,136 @@
+{% extends 'posts/base.html'%}
+{% block content %}
+
+    <div class="right-align">
+        {% load static %}
+        {% static "" as baseUrl %}
+        <!-- image -->
+        <img src="{{ baseUrl }}/images/mak.png" style="width: 90" align="right"></img>
+    </div>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main" >
+
+
+          <div class="blog-post">
+                <h2 class="blog-post-title">Blog autour de math</h2>
+            <p class="blog-post-meta">January 1, 2014 by <a href="#">Bee</a></p>
+
+            <p>Django provides almost everything you need to create authentication pages to handle login, logout, and password management "out of the box". This includes a url mapper, views and forms, but it does not include the templates — we have to create our own!</p>
+
+            <h2>Code introduction: Erostatene</h2>
+            <p>Le crible d'Ératosthène est un procédé qui permet de trouver tous les nombres premiers inférieurs à un certain entier naturel donné N. C'est l'ancêtre du crible d'Atkin qui est plus rapide mais plus complexe.</p>
+            <h3>Algorithme:</h3>
+            <p>Les trois solutions du crible d'Erostatene </p>
+            <pre><code>
+                Erostosthene (version naif) :
+                def Eros(n):
+                    liste = [i for i in range(2:n)]
+                    for i in liste:
+                        l=mult(i,n+1)
+                        l.remove(0)
+                        a=l[0]
+                    for i in l:
+                        if i in liste:
+                                liste.remove(i)
+                liste.append(a)
+                liste.sort()
+                print(liste)
+            </code></pre>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+            <h3>Sub-heading</h3>
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <ul>
+              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+              <li>Donec id elit non mi porta gravida at eget metus.</li>
+              <li>Nulla vitae elit libero, a pharetra augue.</li>
+            </ul>
+
+          </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+
+      <div>
+            <h3 class="pb-3 mb-4 font-italic border-bottom">
+                Mamadou KOGRI
+            </h3>
+
+          <!-- posts app -->
+            {% for post in posts %}
+            <div align="left" class="shadowbox" style="display: inline-block;padding:1em; marging: 1em; width:300">
+                <h3 style="color:red" >{{title}}:</h3>
+			    <div class="card-panel hoverable">
+				    <div class="card-image">
+                        {% load static %}
+                        {% static "" as baseUrl %}
+                        <!-- image -->
+				        <img class="responsive-img" src="{{ baseUrl }}/images/Aerial08.jpg" style="width:150px">
+				        <br><span class="card-title"><strong>{{ post.title }}</strong></span>
+				    </div>
+				    <div class="card-content">
+                        <p>
+                            Libélé du post <br>
+                            ...&#8230;<a href="/posts/details/{{post.id}}"> En savoir plus</a>
+                        </p>
+				    </div>
+				    <div class="card-action right-align">
+				        <a href="/data-analysis-tutorials/" class="waves-effect waves-light btn" style="color:#000000; background-color:#FFD166">View</a>
+				    </div>
+                </div>
+
+		    </div>&nbsp
+            {% endfor%}
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+          <div class="p-3 mb-3 bg-light rounded">
+            <h4 class="font-italic">About</h4>
+            <p class="mb-0">Kundugu Kogri <em>django-django</em> Django is boum rusted, tomato box, for instance let take java, in order to do the persistance in the data we need to bring in hibernate, do all the config, the mapping blabla... In django, we just make migration and boum</p>
+          </div>
+
+            <div class="p-3">
+            <h4 class="font-italic">Elsewhere</h4>
+              <ol class="list-unstyled">
+                <li><a href="http://www.django-rest-framework.org"> rest framework </a>&nbsp </li>
+                <li><a href="https://cosmolearning.org/courses/ios-development-with-swift-by-thenewboston/"> Swift: ios dev </a>&nbsp</li>
+                <li><a href="https://django-angular.awesto.com/classic_form/"> awestro: Angular </a>&nbsp</li>
+                <li><a href="http://selenium-python.readthedocs.io/getting-started.html"> selenium </a>&nbsp</li>
+                <li><a href="https://www.wisdomjobs.com/e-university/django-tutorial-1149/django-ajax-16413.html"> wisdomjobs-university </a>&nbsp</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication"> User_auth_log </a>&nbsp</li>
+                <li><a href="https://www.mapsmarker.com/docs/basic-usage/how-google-maps/"> MapApiKey </a>&nbsp</li>
+
+
+            </ol>
+          </div>
+          <div class="p-3">
+            <h4 class="font-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+              <li><a href="#">March 2018</a></li>
+              <li><a href="#">February 2018</a></li>
+              <li><a href="#">January 2018</a></li>
+              <li><a href="#">December 2017</a></li>
+              <li><a href="#">November 2017</a></li>
+              <li><a href="#">October 2017</a></li>
+              <li><a href="#">September 2017</a></li>
+              <li><a href="#">August 2017</a></li>
+              <li><a href="#">July 2017</a></li>
+              <li><a href="#">June 2017</a></li>
+              <li><a href="#">May 2017</a></li>
+              <li><a href="#">April 2017</a></li>
+            </ol>
+          </div>
+
+        </aside><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+
+
+        <br>
+
+
+
+    </main><!-- /.container -->
+
+{% endblock %}

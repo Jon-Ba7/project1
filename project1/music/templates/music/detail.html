@@ -1,0 +1,21 @@
+{% extends 'music/layout.html'%}
+{% block title %} Album details {% endblock %}
+{% block body %}
+
+    {% load static %}
+    {% static "" as baseUrl %}
+    <img src="{{ baseUrl }}/{{ album.album_logo }}" style="width: 250px"></img>
+
+
+    <h1 style="color: blue"> {{album.album_title}} </h1>
+    <h3 style="color: red"> {{album.artist}} </h3>
+
+
+    {% for song in album.song_set.all%}     
+        <li style="font-size: 1.2em; color:oldlace">
+            {{song.song_title}}.{{song.file_type}}
+        </li>
+    {% endfor%}
+
+{% endblock %}
+
